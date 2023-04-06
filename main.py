@@ -52,7 +52,7 @@ async def mailbox(client,message):
         print(email)
         try:
             if email=='':
-                await message.edit_message_text('Genaerate a email',reply_markup=buttons)
+                await message.edit_message_text('Genarate a email',reply_markup=buttons)
             else: 
                 getmsg_endp =  "https://www.1secmail.com/api/v1/?action=getMessages&login=" + email[:email.find("@")] + "&domain=" + email[email.find("@") + 1:]
                 print(getmsg_endp)
