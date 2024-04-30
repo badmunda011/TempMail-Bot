@@ -25,9 +25,9 @@ msg_buttons=InlineKeyboardMarkup(
 
 # Fillout The variables in Config.py further queries @riz4d 0n telegram
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
+BOT_TOKEN = getenv("BOT_TOKEN", None)
+API_ID = int(getenv("API_ID", 0))
+API_HASH = getenv("API_HASH", None)
 
 app=Client('Temp-Mail Bot',
            api_id=API_ID,
