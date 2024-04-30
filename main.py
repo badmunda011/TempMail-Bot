@@ -3,7 +3,7 @@ import requests as re
 
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 import wget
-import os 
+from os import getenv
 
 buttons=InlineKeyboardMarkup(
                              [
