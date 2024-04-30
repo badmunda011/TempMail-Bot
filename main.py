@@ -1,7 +1,7 @@
 from pyrogram import *
 import requests as re
 from pyrogram import filters
-
+from dotenv import load_dotenv
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 import wget
 from os import getenv
