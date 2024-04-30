@@ -45,7 +45,7 @@ async def mailbox(client,message):
     response=message.data
     if response=='generate':
        global email
-       email = re.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1").json()[0]
+       email = re.get("https://www.temp-mail.lol/").json()[0]
        await message.edit_message_text('__**Your Temporary E-mail: **__`'+str(email)+'`',
                                        reply_markup=buttons)
        print(email)
@@ -68,7 +68,7 @@ async def mailbox(client,message):
         except:
             await message.answer('No messages were received..\nin your Mailbox '+email)
     elif response=='view_msg':
-        msg =re.get("https://www.1secmail.com/api/v1/?action=readMessage&login=" + email[:email.find("@")] + "&domain=" + email[email.find("@") + 1:] + "&id=" + idnum).json()
+        msg =re.get("https://www.temp-mail.lol/" + email[:email.find("@")] + "&domain=" + email[email.find("@") + 1:] + "&id=" + idnum).json()
         print(msg)
         from_mail=msg['from']
         date=msg['date']
@@ -86,7 +86,7 @@ async def mailbox(client,message):
             await message.answer("No Messages Were Recieved..", show_alert=True)
         else:
             dlattach=attachments['filename']
-            attc="https://www.1secmail.com/api/v1/?action=download&login=" + email[:email.find("@")] + "&domain=" + email[email.find("@") + 1:] + "&id=" + idnum+"&file="+dlattach
+            attc="https://www.temp-mail.lol/" + email[:email.find("@")] + "&domain=" + email[email.find("@") + 1:] + "&id=" + idnum+"&file="+dlattach
             print(attc)
             mailbox_vieww='ID No : '+idnum+'\nFrom : '+from_mail+'\nDate : '+date+'\nSubject : '+subjectt+'\nmessage : \n'+body+'\n\n'+'[Download]('+attc+') Attachments'
             filedl=wget.download(attc)
