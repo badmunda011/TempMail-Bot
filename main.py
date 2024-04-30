@@ -1,6 +1,5 @@
 from pyrogram import *
 import requests as re
-from dotenv import load_dotenv
 from pyrogram import filters
 
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
