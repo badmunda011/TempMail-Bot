@@ -2,3 +2,4 @@ pyrogram
 requests
 wget
 TgCrypto
+python-dotenv
